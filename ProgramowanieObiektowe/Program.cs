@@ -274,7 +274,7 @@ namespace ProgramowanieObiektowe
 
         public int CompareTo(Money other)
         {
-
+            return other.Currency.CompareTo(_currency);
         }
     }
     class Person

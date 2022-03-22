@@ -5,7 +5,7 @@ namespace Lab2
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args, IFlyable[] IcanFly)
         {
             Car car = new Car()
             {
@@ -70,6 +70,24 @@ namespace Lab2
             }
 
             int[] arrray = { 1, 2, 3 };
+
+            IFlyable[] p = {
+                new Duck() { size = 5 },
+                new Wasp() { size = 21 },
+                new Duck() { size = 1 },
+                new Duck() { size = 6 },
+                new Hydroplane()
+            };
+            var count=0;
+            foreach (var fly in IcanFly)
+            {
+                if ((fly is IFlyable) && (fly is ISwimmingable))
+                {
+                    count++;
+                    Console.WriteLine(fly.GetType().Name);
+                }
+            }
+            Console.WriteLine(count);
         }
     }
 
@@ -186,45 +204,45 @@ namespace Lab2
         }
     }
 
-    public abstract class Scooter : Vehicle, IElectric
-    {
-        public int Supply()
-        {
-            throw new NotImplementedException();
-        }
-    }
+    //public abstract class Scooter : Vehicle, IElectric
+    //{
+    //    public int Supply()
+    //    {
+    //        throw new NotImplementedException();
+    //    }
+    //}
 
-    public class ElectricScooter : Vehicle, IElectric
-    {
-        public bool isDriver { get; set; }
-        public override decimal Drive(int distance)
-        {
-            if (isDriver)
-            {
-                _mileage += distance;
-                return (decimal)(distance / (double)MaxSpeed);
-            }
-            return -1;
-        }
+    //public class ElectricScooter : Vehicle, IElectric
+    //{
+    //    public bool isDriver { get; set; }
+    //    public override decimal Drive(int distance)
+    //    {
+    //        if (isDriver)
+    //        {
+    //            _mileage += distance;
+    //            return (decimal)(distance / (double)MaxSpeed);
+    //        }
+    //        return -1;
+    //    }
 
-        public int Supply()
-        {
-            throw new NotImplementedException();
-        }
-    }
+    //    public int Supply()
+    //    {
+    //        throw new NotImplementedException();
+    //    }
+    //}
 
-    public class KickScooter : Vehicle, IElectric
-    {
-        public override decimal Drive(int distance)
-        {
-            throw new NotImplementedException();
-        }
+    //public class KickScooter : Vehicle, IElectric
+    //{
+    //    public override decimal Drive(int distance)
+    //    {
+    //        throw new NotImplementedException();
+    //    }
 
-        public int Supply()
-        {
-            throw new NotImplementedException();
-        }
-    }
+    //    public int Supply()
+    //    {
+    //        throw new NotImplementedException();
+    //    }
+    //}
 
 
 
@@ -241,4 +259,88 @@ namespace Lab2
         int Supply();
     }
 
+    interface IElectricScooter : IElectric
+    {
+        decimal Drive(int distance);
+
+    }
+
+    //Cw 1
+    abstract class Scooter : Vehicle
+    {
+
+    }
+    class ElectricScooter : Scooter
+    {
+        private int _BatteriesLevel { get; set; }
+        private int MaxRange { get; set; }
+        public void ChargeBatteries()
+        {
+            _BatteriesLevel = 100;
+        }
+
+        public override decimal Drive(int distance)
+        {
+            _BatteriesLevel -= distance * (int)(Weight * 0.2);
+            MaxRange = _BatteriesLevel * 4;
+            if (MaxRange < distance) return -1;
+            return distance / MaxSpeed;
+        }
+    }
+
+    class KickScooter : Scooter
+    {
+        public override decimal Drive(int distance)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    //cw 2
+    interface ISwimmingable
+    {
+        public decimal Swim(int distance);
+    }
+    interface IFlyable
+    {
+        public decimal Fly(int distance);
+    }
+
+    class Duck : ISwimmingable, IFlyable
+    {
+        public decimal size;
+        public decimal Fly(int distance)
+        {
+            throw new NotImplementedException();
+        }
+
+        public decimal Swim(int distance)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    
+    class Wasp : IFlyable
+    {
+        public decimal size;
+        public decimal Fly(int distance)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    class Hydroplane : ISwimmingable, IFlyable
+    {
+        public decimal size;
+        public decimal Fly(int distance)
+        {
+            throw new NotImplementedException();
+        }
+
+        public decimal Swim(int distance)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
 }
+
