@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Lab2
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args, IFlyable[] IcanFly)
         {
@@ -71,23 +71,23 @@ namespace Lab2
 
             int[] arrray = { 1, 2, 3 };
 
-            IFlyable[] p = {
-                new Duck() { size = 5 },
-                new Wasp() { size = 21 },
-                new Duck() { size = 1 },
-                new Duck() { size = 6 },
-                new Hydroplane()
-            };
-            var count=0;
-            foreach (var fly in IcanFly)
-            {
-                if ((fly is IFlyable) && (fly is ISwimmingable))
-                {
-                    count++;
-                    Console.WriteLine(fly.GetType().Name);
-                }
-            }
-            Console.WriteLine(count);
+            //IFlyable[] p = {
+            //    new Duck() { size = 5 },
+            //    new Wasp() { size = 21 },
+            //    new Duck() { size = 1 },
+            //    new Duck() { size = 6 },
+            //    new Hydroplane()
+            //};
+            //var count=0;
+            //foreach (var fly in IcanFly)
+            //{
+            //    if ((fly is IFlyable) && (fly is ISwimmingable))
+            //    {
+            //        count++;
+            //        Console.WriteLine(fly.GetType().Name);
+            //    }
+            //}
+            //Console.WriteLine(count);
         }
     }
 
