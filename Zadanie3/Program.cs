@@ -9,11 +9,7 @@ namespace Zadanie3
             //UWAGA!!! Nie usuwaj poniższego wiersza!!!
             //Console.WriteLine("Otrzymałeś punktów: " + (Test.Exercises_1() + Test.Excersise_2() + Test.Excersise_3()));
 
-            var tuple1 = Exercise2.GetTuple1("Karol", 12, true);
-            Console.WriteLine(tuple1);
-            int[] arr = { 1,2,3,4};
-            var test = Exercise2.GetTuple2(arr);
-            Console.WriteLine(test);
+            Musicians<T> musicians = new Musicians<string>("Jarek");
         }
 
         //Ćwiczenie 1
@@ -25,21 +21,9 @@ namespace Zadanie3
             string Play();
         }
 
-        interface IInstrument
-        {
-            string Play();
-        }
-
-        class Musician<T> : IPlay, IInstrument
+        class Musician<T> : IPlay
         {
             public T Instrument { get; init; }
-            public T MusicianName { get; init; }
-
-            public Musician(T musicianName)
-            {
-                MusicianName = musicianName;
-            }
-
             public string Play()
             {
                 return (Instrument as Instrument)?.Play();
@@ -64,12 +48,20 @@ namespace Zadanie3
             }
         }
 
-        class Guitar
+        class Guitar : Instrument
         {
+            public override string Play()
+            {
+                return "GUITAR";
+            }
         }
 
-        class Drum
+        class Drum : Instrument
         {
+            public override string Play()
+            {
+                return "GUITAR";
+            }
         }
 
         //Cwiczenie 2
@@ -85,7 +77,7 @@ namespace Zadanie3
                     return newObj;
                 else
                     return null;
-                    //throw new NotImplementedException();
+                //throw new NotImplementedException();
             }
 
             //Zdefiniuj poniższą metodę, aby zwracała krotkę o dwóch polach
@@ -103,13 +95,19 @@ namespace Zadanie3
             {
                 if (arr == null)
                 {
-                    ValueTuple<T[], bool> tup = new ValueTuple<T[], bool>(arr,false);
+                    ValueTuple<T[], bool> tup = new ValueTuple<T[], bool>(arr, false);
                     return tup;
                 }
                 else
                 {
-                   
+                    ValueTuple<T[], bool> tup = new ValueTuple<T[], bool>(arr, true);
+                    return tup;
                 }
+            }
+
+            public override bool Equals(object obj)
+            {
+                return base.Equals(obj);
             }
         }
 
