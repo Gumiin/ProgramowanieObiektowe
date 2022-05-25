@@ -33,9 +33,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testament", "testament\test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testament2", "testament2\testament2.csproj", "{BE5F8CE9-CDF4-442B-ADB7-C0087AE16EF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab10", "Lab10\Lab10.csproj", "{0E8B00B5-02CD-420E-8D6C-340B3D567C8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab10", "Lab10\Lab10.csproj", "{0E8B00B5-02CD-420E-8D6C-340B3D567C8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project", "Project\Project.csproj", "{636CD27E-BC78-4447-BE35-AF5CDD80DFDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App_1", "Project\App_1.csproj", "{636CD27E-BC78-4447-BE35-AF5CDD80DFDB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{0BA32E06-7D40-49F2-9DEB-D6A71110E311}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{636CD27E-BC78-4447-BE35-AF5CDD80DFDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{636CD27E-BC78-4447-BE35-AF5CDD80DFDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{636CD27E-BC78-4447-BE35-AF5CDD80DFDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BA32E06-7D40-49F2-9DEB-D6A71110E311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BA32E06-7D40-49F2-9DEB-D6A71110E311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BA32E06-7D40-49F2-9DEB-D6A71110E311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BA32E06-7D40-49F2-9DEB-D6A71110E311}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
