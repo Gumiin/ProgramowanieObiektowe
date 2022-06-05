@@ -137,20 +137,7 @@ namespace App_1
             //MessageBox.Show($"Wybrany kod wejściowy: {inputCode}\rWybrany kod wyjściowy: {resultCode}\nKwota: {amountStr}");
         }
 
-        //private void InputValue_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        //{
-        //    //spawdzenie czy input to liczba
-        //    if (e.Text.EndsWith(","))
-        //    {
-        //        string ee = e.Text + "0";
-        //        e.Handled = !decimal.TryParse(ee, out decimal value);
-        //    }
-        //    else
-        //    {
-        //        e.Handled = !decimal.TryParse(e.Text, out decimal value);
-        //    }
-        //}
-        private void NumberValidation(object sender, TextCompositionEventArgs e)
+        private void InputValue_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !decimal.TryParse(InputValue.Text + e.Text, out decimal value);
         }
