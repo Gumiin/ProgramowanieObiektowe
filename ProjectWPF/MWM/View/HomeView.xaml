@@ -6,104 +6,468 @@
              xmlns:local="clr-namespace:ProjectWPF.MWM.View"
              mc:Ignorable="d" 
              d:DesignHeight="460" d:DesignWidth="800">
-    <StackPanel>
-        <TextBlock Text="Discover"
-                   Foreground="White"
-                   FontSize="28"
-                   HorizontalAlignment="Left"
-                   Margin="0,0,0,20"
-                   FontFamily="/Fonts/#Poppins"/>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal"
-                    Margin="0,0,0,10">
-            <Border Width="400"
-                    Height="200">
-                <Border.Background>
-                    <LinearGradientBrush  StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#5bc3ff" Offset="0.0"/>
-                        <GradientStop Color="#3bc3ff" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
+        <Border CornerRadius="20"
+                Background="#353340"
+                Grid.ColumnSpan="5"
+                Grid.Row="0">
+            <Grid>
+                <TextBox x:Name="CurrentCity"
+                         Text="Current City"
+                         FontSize="25"
+                         TextAlignment="Center"
+                         VerticalContentAlignment="Top"
+                         IsEnabled="False"
+                         Margin="0,0,0,0"
+                         Background="Transparent"
+                         Foreground="White"
+                         BorderThickness="0"
+            />
+            </Grid>
+        </Border>
 
-                <Border.Clip>
-                    <RectangleGeometry RadiusX="10"
-                                       RadiusY="10"
-                                       Rect="0,0,400,200"/>
-                </Border.Clip>
-
-                <Grid>
-                    <StackPanel>
-                        <TextBlock Text="World leader&#x0a;in global finance"
-                                   Foreground="White"
-                                   FontSize="28"
-                                   Margin="20,10,10,0"
-                                   FontFamily="/Fonts/#Poppins"/>
-
-                        <TextBlock Text="Get started today"
-                                   Foreground="White"
-                                   FontSize="18"
-                                   Margin="20,10,10,0"
-                                   FontFamily="/Fonts/#Poppins"/>
-                    </StackPanel>
-                    <Image Width="200"
-                           Height="200"
-                           Source="/Images/Bez tytułu.png"
-                           HorizontalAlignment="Left"
-                           VerticalAlignment="Center" Margin="298,0,0,0"/>
-
-                </Grid>
-            </Border>
-            <Border Width="200"
-                    Height="200"
-                    CornerRadius="10"
-                    Margin="45,0,0,0">
-                <Border.Background>
-                    <LinearGradientBrush  StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#ffc554" Offset="0.0"/>
-                        <GradientStop Color="#ffb73a" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-            </Border>
+        <Border Grid.Column="0"
+                Grid.ColumnSpan="1"
+                Grid.Row="6">
+            <Grid>
+                <TextBox
+                    BorderThickness="0"
+            Grid.Column="0"
+            Text="X:"
+            FontSize="42"
+            TextAlignment="Right"
+                    Margin="0,0,9,0"
+            VerticalContentAlignment="Center" Foreground="Orange" 
+            Background="Transparent"
+            FontFamily="/Fonts/#Poppins"
+                    IsEnabled="False"
+            />
+            </Grid>
+        </Border>
 
 
-        </StackPanel>
-        <StackPanel>
+        <Border CornerRadius="10"
+                Background="#353340"
+                Grid.Column="0"
+                Grid.Row="6"
+                Grid.ColumnSpan="3"
+                Margin="62,5,5,5">
+            <Grid>
+                <TextBox
+                    x:Name="enterX"
+                    Padding="0 0 10 0"
+                    FontSize="21"
+                    TextAlignment="Right"
+                    VerticalContentAlignment="Center"
+                    FontFamily="/Fonts/#Poppins"
+                    BorderThickness="0"
+                    Background="Transparent"
+                    VerticalAlignment="Center"
+                    Foreground="#CFCFCF"
+            />
+            </Grid>
+        </Border>
+        <Border Grid.Column="3"
+                Grid.Row="6">
+            <Grid>
+                <TextBox BorderThickness="0"
+            Grid.Column="2"
+            Grid.Row="6"
+            Padding="0 0 10 0"
+            Text="Y:"
+            FontSize="42"
+            TextAlignment="Right"
+            VerticalContentAlignment="Center" Foreground="Orange"
+            Background="Transparent"
+            FontFamily="/Fonts/#Poppins"
+                         IsEnabled="False"
+            />
+            </Grid>
+        </Border>
 
-            <StackPanel.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="Margin" Value="15,0,0,0"/>
-                </Style>
-            </StackPanel.Resources>
+
+        <Border CornerRadius="10"
+                Background="#353340"
+                Grid.Column="3"
+                Grid.Row="6"
+                Grid.ColumnSpan="3"
+                Margin="62,5,5,5">
+            <Grid>
+                <TextBox x:Name="enterY"
+                         Padding="0 0 10 0"
+                         FontSize="21"
+                         TextAlignment="Right"
+                         VerticalContentAlignment="Center"
+                         FontFamily="/Fonts/#Poppins"
+                         BorderThickness="0"
+                         Background="Transparent"
+                         VerticalAlignment="Center"
+                         Foreground="#CFCFCF"
+            />
+            </Grid>
+        </Border>
+
+        <ComboBox
+            x:Name="SelectCity"
+            Grid.Column="7"
+            Grid.Row="6"
+            Grid.ColumnSpan="4"
+            Margin="5,5,5,5"
+            FontSize="20"
+            VerticalContentAlignment="Center" Foreground="Black"
             
-            <TextBlock Text="Most Watched"
-                           Foreground="White"
-                           FontSize="20"
-                           HorizontalAlignment="Left"
-                           Margin="0,0,0,20"
-                       FontFamily="/Fonts/#Poppins"/>
-            <StackPanel Orientation="Horizontal">
-                
-                <Border Width="150"
-                        Height="150"
-                        Background="#884eff"
-                        CornerRadius="10"
-                        Margin="0"/>
+            />
+        <Border CornerRadius="10"
+                Grid.Column="6"
+                Grid.ColumnSpan="3"
+                Grid.Row="0"
+                Background="Orange"
+                Margin="10,10,10,10">
+            <Grid>
+                <Button 
+            x:Name="xySearch"
+            Padding="0,0,0,0"
+                    BorderThickness="0"
+                    Background="Transparent"
+            FontSize="15" Click="Button_Click" 
+            >
+                    Search by X and Y
+                </Button>
+            </Grid>
+        </Border>
 
-                <Border Width="150"
-                        Height="150"
-                        Background="#4e99ff"
-                        CornerRadius="10"/>
+        <Border CornerRadius="10"
+                Grid.Column="9"
+                Grid.ColumnSpan="3"
+                Grid.Row="0"
+                Background="BlueViolet"
+                Margin="10,10,10,10">
+            <Grid>
+                <Button
+            x:Name="normalSearch"
+            Padding="0 0 0 10"
+            FontSize="15" Click="Button_Click1" Background="Transparent"
+            FontFamily="/Fonts/#Poppins">
+                    Search by city
+                </Button>
+            </Grid>
+        </Border>
 
-                <Border Width="150"
-                        Height="150"
-                        Background="#4eff91"
-                        CornerRadius="10"/>
 
-                <Border Width="150"
-                        Height="150"
-                        Background="#ecff4e"
-                        CornerRadius="10"/>
-            </StackPanel>
-        </StackPanel>
-    </StackPanel>
+
+        <TextBox 
+            x:Name="Date0"
+            Grid.Column="1"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Margin="10 10 5 0"
+            FontSize="18"
+            TextAlignment="Center"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap"
+            IsEnabled="False"
+            Background="Transparent"
+            Foreground="White"
+            BorderThickness="0">
+        </TextBox>
+        <Border
+            CornerRadius="20"
+            Background="#353355"
+            Grid.Column="1"
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            BorderThickness="1 0 1 0"
+            Margin="10 0 5 0"
+            
+            >
+            <Image
+            x:Name="Image0"            
+            />
+        </Border>
+        <TextBox
+            x:Name="Status0"
+            Grid.Column="1"
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            Margin="10 0 5 0"
+            FontSize="18"
+            TextAlignment="Center"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"
+            Background="Transparent"
+            Foreground="White"
+            BorderThickness="0">
+        </TextBox>
+        <TextBox 
+            x:Name="Temperature0"
+            Grid.Column="1"
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            Margin="10 0 5 5"
+            FontSize="18"
+            TextAlignment="Center"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"
+           Background="Transparent"
+            Foreground="White"
+            BorderThickness="0">
+        </TextBox>
+        <TextBox
+            x:Name="Date1"
+            Grid.Column="3"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Margin="5 10 5 0"
+            FontSize="18"
+            TextAlignment="Center"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap"
+            IsEnabled="False"
+            Background="Transparent"
+            Foreground="White"
+            BorderThickness="0">
+        </TextBox>
+        <Border
+            Grid.Column="3"
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            BorderThickness="1 0 1 0"
+            Margin="5 0 5 0"
+            CornerRadius="15"
+            Background="#353355"
+            >
+            <Image
+            x:Name="Image1"
+            >
+            </Image>
+        </Border>
+        <TextBox
+            x:Name="Status1"
+            Grid.Column="3"
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            Margin="5 0 5 0"
+            FontSize="18"
+            TextAlignment="Center"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"
+            Background="Transparent"
+            Foreground="White"
+            BorderThickness="0">
+        </TextBox>
+        <TextBox
+            x:Name="Temperature1"
+            Grid.Column="3"
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            Margin="5 0 5 5"
+            FontSize="18"
+            TextAlignment="Center"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"
+            Background="Transparent"
+            Foreground="White"
+            BorderThickness="0">
+        </TextBox>
+        <TextBox
+            x:Name="Date2"
+            Grid.Column="5"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Margin="5 10 5 0"
+            FontSize="18"
+            TextAlignment="Center"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap"
+            IsEnabled="False"
+            Background="Transparent"
+            Foreground="White"
+            BorderThickness="0">
+        </TextBox>
+        <Border
+            Grid.Column="5"
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            BorderThickness="1 0 1 0"
+            Margin="5 0 5 0"
+            CornerRadius="20"
+            Background="#353355"
+            >
+            <Image
+            x:Name="Image2"
+            >
+            </Image>
+        </Border>
+        <TextBox
+            x:Name="Status2"
+            Grid.Column="5"
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            Margin="5 0 5 0"
+            FontSize="18"
+            TextAlignment="Center"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"
+            Background="Transparent"
+            Foreground="White"
+            BorderThickness="0">
+        </TextBox>
+        <TextBox 
+            x:Name="Temperature2"
+            Grid.Column="5"
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            Margin="5 0 5 5"
+            FontSize="18"
+            TextAlignment="Center"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"
+            Background="Transparent"
+            Foreground="White"
+            BorderThickness="0"
+            >
+        </TextBox>
+        <TextBox
+            x:Name="Date3"
+            Grid.Column="7"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Margin="5 10 10 0"
+            FontSize="18"
+            TextAlignment="Center"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap"
+            IsEnabled="False"
+            Background="Transparent"
+            Foreground="White"
+            BorderThickness="0"
+            />
+        <Border
+            Grid.Column="7"
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            BorderThickness="1 0 1 0"
+            Margin="5 0 10 0"
+            CornerRadius="20"
+            Background="#353355"
+            >
+            <Image
+            x:Name="Image3"
+            >
+            </Image>
+        </Border>
+        <TextBox
+            x:Name="Status3"
+            Grid.Column="7"
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            Margin="5 0 10 0"
+            FontSize="18"
+            TextAlignment="Center"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"
+            Background="Transparent"
+            Foreground="White"
+            BorderThickness="0"
+            >
+        </TextBox>
+        <TextBox
+            x:Name="Temperature3"
+            Grid.Column="7"
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            Margin="5 0 10 5"
+            FontSize="18"
+            TextAlignment="Center"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"
+            Background="Transparent"
+            Foreground="White"
+            BorderThickness="0"
+            >
+        </TextBox>
+        <TextBox
+            x:Name="Date4"
+            Grid.Column="9"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Margin="5 10 10 0"
+            FontSize="18"
+            TextAlignment="Center"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap"
+            IsEnabled="False"
+            Background="Transparent"
+            Foreground="White"
+            BorderThickness="0"
+            />
+        <Border
+            Grid.Column="9"
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            BorderThickness="1 0 1 0"
+            Margin="5 0 10 0"
+            CornerRadius="20"
+            Background="#353355"
+            >
+            <Image
+            x:Name="Image4"
+            >
+            </Image>
+        </Border>
+        <TextBox
+            x:Name="Status4"
+            Grid.Column="9"
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            Margin="5 0 10 0"
+            FontSize="18"
+            TextAlignment="Center"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"
+            Background="Transparent"
+            Foreground="White"
+            BorderThickness="0"
+            >
+        </TextBox>
+        <TextBox
+            x:Name="Temperature4"
+            Grid.Column="9"
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            Margin="5 0 10 5"
+            FontSize="18"
+            TextAlignment="Center"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"
+            Background="Transparent"
+            Foreground="White"
+            BorderThickness="0"
+            >
+        </TextBox>
+    </Grid>
 </UserControl>

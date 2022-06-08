@@ -11,11 +11,11 @@ namespace ProjectWPF.MWM.ViewModel
     {
         public RelayCommand HomeViewCommand { get; set; }
 
-        public RelayCommand DiscoveryViewCommand { get; set; }
+        public RelayCommand HistoryViewCommand { get; set; }
 
         public HomeViewModel HomeVM{ get; set; }
 
-        public DiscoveryViewModel DiscoveryVM{ get; set; }
+        public HistoryViewModel HistoryVM{ get; set; }
 
         private object _currentView;
 
@@ -31,7 +31,7 @@ namespace ProjectWPF.MWM.ViewModel
         public MainViewModel()
         {
             HomeVM = new HomeViewModel();
-            DiscoveryVM = new DiscoveryViewModel();
+            HistoryVM = new HistoryViewModel();
             CurrentView = HomeVM;
 
             HomeViewCommand = new RelayCommand(o => 
@@ -39,9 +39,9 @@ namespace ProjectWPF.MWM.ViewModel
                 CurrentView = HomeVM;
             });
 
-            DiscoveryViewCommand = new RelayCommand(o =>
+            HistoryViewCommand = new RelayCommand(o =>
             {
-                CurrentView = DiscoveryVM;
+                CurrentView = HistoryVM;
             });
         }
     }

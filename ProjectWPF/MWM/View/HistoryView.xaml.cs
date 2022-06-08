@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ProjectWPF.MWM.View
 {
     /// <summary>
-    /// Interaction logic for DiscoveryView.xaml
+    /// Interaction logic for HistoryView.xaml
     /// </summary>
-    public partial class DiscoveryView : UserControl
+    public partial class HistoryView : UserControl
     {
-        public DiscoveryView()
+        public HistoryView()
         {
             InitializeComponent();
         }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjectWPF"
         xmlns:viewModel="clr-namespace:ProjectWPF.MWM.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="920"
+        Title="MainWindow" Height="800" Width="1130"
         WindowStyle="ToolWindow"
         ResizeMode="NoResize"
         Background="Transparent">
@@ -15,8 +15,7 @@
         <viewModel:MainViewModel/>
     </Window.DataContext>
 
-    <Border Background="#272537"
-            CornerRadius="20">
+    <Border Background="#272537">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
@@ -28,16 +27,16 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             
-            <TextBlock Text="Elysian"
+            <TextBlock Text="Weather APP"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
                        Foreground="White"
                        FontSize="22"
                        Margin="20,0,0,0"
                        FontFamily="/Fonts/#Poppins"/>
-            
+
             <StackPanel Grid.Row="1">
-                
+
                 <RadioButton Content="Home"
                              Height="50"
                              Foreground="White"
@@ -46,27 +45,15 @@
                              IsChecked="True"
                              Command="{Binding HomeViewCommand}"/>
 
-                <RadioButton Content="Discovery"
+                <RadioButton Content="History"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
-                             Command="{Binding DiscoveryViewCommand}"/>
-
-                <RadioButton Content="Featured"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Command="{Binding HistoryViewCommand}"/>
 
             </StackPanel>
-            <TextBox Width="250"
-                     Height="40"
-                     VerticalAlignment="Center"
-                     HorizontalAlignment="left"
-                     Margin="5"
-                     Grid.Column="1"
-                     Style="{StaticResource ModernTextbox}"/>
+
 
             <ContentControl Grid.Row="1"
                             Grid.Column="1"

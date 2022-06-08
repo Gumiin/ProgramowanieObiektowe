@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectWPF.MWM.ViewModel
 {
-    public class DiscoveryViewModel
+    public class HistoryViewModel
     {
     }
 }
